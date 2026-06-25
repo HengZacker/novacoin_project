@@ -28,31 +28,9 @@
     margin: 0;
     padding: 0;
 }
-
-body{
+body {
     background-color: var(--black);
     color: var(--white);
-    position: relative;
-}
-
-body::before{
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(136, 92, 245, 0.15),
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(168, 85, 247, 0.08),
-            transparent 50%
-        );
 }
 
 .navbar {
@@ -110,11 +88,6 @@ body::before{
     font-size: var(--paragraph-size);
 }
 
-.navbar a:nth-child(2) {
-    color: var(--primary-color);
-}
-
-
 .navbar a:hover {
     color: var(--primary-color);
     border: none;
@@ -125,143 +98,115 @@ body::before{
     border:none;
 }
 
-.hero-section {
-    position: relative;
-    height: 100vh;
-    width: 100%;
+.comingsoon{
+    margin-top: 0;
+    padding: 80px 0 0;
+    background: radial-gradient(
+        circle,
+        rgba(136,92,245,.25),
+        transparent 70%
+    );
+    top:50%;
+    left:50%;
 }
 
-.hero-content {
-    font-family: var(--secondary-font);
+.comingsoon-container {
+    max-width: 920px;
+    margin: 160px auto 80px;
+    padding: 0 24px;
     display: flex;
+    flex-direction: column;
+    gap: 40px;
     align-items: center;
-    justify-content: start;
-    padding: 140px 0 0 80px;
 }
 
-.about-nova{
-    padding:120px 80px;
+.comingsoon-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(136, 92, 245, 0.18);
+    border-radius: 28px;
+    padding: 48px 40px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+    text-align: center;
 }
 
-.about-container{
-    display:flex;
-    align-items:center;
-    gap:60px;
+.comingsoon-subtitle {
+    display: inline-block;
+    font-family: var(--secondary-font);
+    color: var(--primary-color);
+    background: rgba(136, 92, 245, 0.14);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    margin-bottom: 22px;
 }
 
-.about-image{
-    flex:1;
+.comingsoon-header h1 {
+    font-family: var(--main-font);
+    font-size: clamp(48px, 7vw, 84px);
+    color: var(--white);
+    letter-spacing: 0.12em;
+    margin: 18px auto 20px;
+    line-height: 1.05;
 }
 
-.about-image img{
-    width:100%;
-    border-radius:20px;
-    border:1px solid var(--dark-color);
-}
-
-.about-content{
-    flex:1;
-}
-
-.section-tag{
-    margin-top: 10px;
-    color:var(--primary-color);
-    font-family:var(--main-font);
-    letter-spacing:2px;
+.comingsoon-header p {
+    max-width: 680px;
+    margin: 0 auto;
+    font-family: var(--secondary-font);
     font-size: 18px;
+    color: rgba(255, 255, 255, 0.78);
+    line-height: 1.8;
 }
 
-.about-content h2{
-    font-family:var(--main-font);
-    font-size:42px;
-    margin:15px 0;
+.comingsoon-text {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(136, 92, 245, 0.18);
+    border-radius: 24px;
+    padding: 36px 32px;
 }
 
-.about-content h2 span{
-    color:var(--primary-color);
+.comingsoon-text h3 {
+    font-family: var(--main-font);
+    font-size: 28px;
+    margin-bottom: 22px;
+    color: var(--white);
 }
 
-.about-content p{
-    font-family:var(--secondary-font);
-    line-height:1.8;
-    color:#d0d0d0;
+.comingsoon-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
 }
 
-.info-cards{
-    display:flex;
-    gap:20px;
-    margin-top:40px;
+.comingsoon-text li {
+    position: relative;
+    padding-left: 34px;
+    font-family: var(--secondary-font);
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.88);
+    line-height: 1.8;
 }
 
-.info-card{
-    flex:1;
-    text-align:center;
-    padding:20px;
-    border-left:1px solid var(--dark-color);
+.comingsoon-text li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 14px;
 }
-
-.info-card i{
-    font-size:30px;
-    color:var(--primary-color);
-    margin-bottom:15px;
-}
-
-.info-card h3{
-    font-family:var(--secondary-font);
-    margin-bottom:10px;
-}
-
-.info-card p{
-    font-size:14px;
-}
-
-.core-values{
-    padding:0 80px 120px;
-    text-align:center;
-}
-
-.core-values h2{
-    font-family:var(--main-font);
-    font-size:42px;
-    margin-bottom:50px;
-}
-
-.value-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-}
-
-.value-card{
-    background:#070707;
-    border:1px solid var(--dark-color);
-    border-radius:20px;
-    padding:40px 25px;
-    transition:.3s;
-}
-
-.value-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px rgba(136,92,245,.3);
-}
-
-.value-card i{
-    font-size:40px;
-    color:var(--primary-color);
-    margin-bottom:20px;
-}
-
-.value-card h3{
-    font-family:var(--secondary-font);
-    margin-bottom:15px;
-}
-
-.value-card p{
-    font-family:var(--secondary-font);
-    color:#cfcfcf;
-    line-height:1.6;
-}
-
 
 .NovaCoin-footer {
     width: 100%;
@@ -345,7 +290,6 @@ body::before{
     flex: 2 1 560px;
     flex-wrap: wrap;
     gap: 30px;
-    justify-content: space-between;
 }
 
 .footer-column {
@@ -390,68 +334,29 @@ body::before{
 }
 
 
-/* Responsive layout */
-/* Responsive layout + hamburger-like mobile nav */
 @media (max-width: 1024px) {
     .navbar {
-        padding: 0 30px;
-    }
-
-    .hero-content {
-        padding: 120px 20px 0 20px;
-    }
-
-    .about-nova {
-        padding: 120px 30px;
-    }
-
-    .about-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .about-image,
-    .about-content {
-        width: 100%;
-    }
-
-    .about-image img {
-        max-width: 100%;
-    }
-
-    .info-cards {
+        padding: 20px 30px;
         flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .value-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 20px 24px;
         justify-content: space-between;
-        gap: 12px;
+        align-items: center;
         position: relative;
         height: auto;
     }
 
     .navbar::before {
         content: "";
-        display: block;
-        width: 28px;
-        height: 18px;
         position: absolute;
-        right: 24px;
+        right: 30px;
         top: 50%;
         transform: translateY(-50%);
+        width: 24px;
+        height: 18px;
         background-image:
             linear-gradient(var(--white) 0 0),
             linear-gradient(var(--white) 0 0),
             linear-gradient(var(--white) 0 0);
-        background-size: 28px 2px;
+        background-size: 24px 2px;
         background-repeat: no-repeat;
         background-position: left top, left center, left bottom;
         cursor: pointer;
@@ -459,27 +364,31 @@ body::before{
     }
 
     .nav-content {
-        display: flex;
         width: 100%;
         flex-direction: column;
         align-items: center;
         gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-        background: rgba(0, 0, 0, 0.96);
-        border-top: 1px solid rgba(136, 92, 245, 0.25);
         position: absolute;
         left: 0;
         right: 0;
         top: 90px;
         padding: 0;
+        background: rgba(0, 0, 0, 0.96);
+        border-top: 1px solid rgba(136, 92, 245, 0.25);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height 0.35s ease, opacity 0.35s ease;
+        z-index: 900;
     }
 
     .navbar:hover .nav-content,
     .navbar:focus-within .nav-content,
     .navbar:active .nav-content {
         max-height: 420px;
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .nav-content a {
@@ -490,40 +399,101 @@ body::before{
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .hero-content {
-        flex-direction: column;
-        align-items: flex-start;
+    .comingsoon-container {
+        margin: 140px auto 60px;
     }
 
-    .about-nova {
-        padding: 100px 20px 40px;
+    .comingsoon-header {
+        padding: 40px 30px;
     }
 
-    .about-container {
-        padding: 0 0 30px;
+    .comingsoon-text {
+        padding: 34px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 18px 20px;
     }
 
-    .info-cards {
-        flex-direction: column;
+    .navbar::before {
+        right: 20px;
     }
 
-    .value-grid {
-        grid-template-columns: 1fr;
+    .comingsoon-container {
+        margin: 120px auto 50px;
+        gap: 30px;
+    }
+
+    .comingsoon-header {
+        padding: 34px 24px;
+    }
+
+    .comingsoon-header h1 {
+        font-size: clamp(36px, 9vw, 60px);
+    }
+
+    .comingsoon-text {
+        padding: 30px 24px;
+    }
+
+    .comingsoon-text h3 {
+        font-size: 24px;
+    }
+
+    .comingsoon-text li {
+        font-size: 16px;
+        padding-left: 30px;
+    }
+
+    .comingsoon-text li::before {
+        width: 24px;
+        height: 24px;
+        font-size: 12px;
     }
 
     .NovaCoin-footer {
         padding: 32px 20px;
         flex-direction: column;
-        gap: 30px;
-        align-items: stretch;
+        justify-content: stretch;
+        gap: 28px;
     }
 
     .second-footer-content {
+        width: 100%;
         flex-direction: column;
         gap: 24px;
     }
 
     .footer-column {
         min-width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .navbar::before {
+        right: 16px;
+    }
+
+    .comingsoon-container {
+        margin: 100px auto 40px;
+        padding: 0 16px;
+    }
+
+    .comingsoon-header {
+        padding: 30px 20px;
+    }
+
+    .comingsoon-text {
+        padding: 26px 20px;
+    }
+
+    .comingsoon-header h1 {
+        font-size: clamp(32px, 12vw, 48px);
+    }
+
+    .comingsoon-text h3 {
+        font-size: 22px;
     }
 }

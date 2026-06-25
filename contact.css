@@ -28,31 +28,9 @@
     margin: 0;
     padding: 0;
 }
-
-body{
+body {
     background-color: var(--black);
     color: var(--white);
-    position: relative;
-}
-
-body::before{
-    content: '';
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-
-    background:
-        radial-gradient(
-            circle at 50% 20%,
-            rgba(136, 92, 245, 0.15),
-            transparent 40%
-        ),
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(168, 85, 247, 0.08),
-            transparent 50%
-        );
 }
 
 .navbar {
@@ -110,10 +88,9 @@ body::before{
     font-size: var(--paragraph-size);
 }
 
-.navbar a:nth-child(2) {
+.navbar a:nth-child(5) {
     color: var(--primary-color);
 }
-
 
 .navbar a:hover {
     color: var(--primary-color);
@@ -125,141 +102,236 @@ body::before{
     border:none;
 }
 
-.hero-section {
-    position: relative;
-    height: 100vh;
-    width: 100%;
+/* CONTACT PAGE */
+
+.contact{
+    min-height:100vh;
+    padding:120px 8%;
+    position:relative;
+    overflow:hidden;
 }
 
-.hero-content {
-    font-family: var(--secondary-font);
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 140px 0 0 80px;
+.contact::before{
+    content:'';
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:radial-gradient(
+        circle,
+        rgba(136,92,245,.25),
+        transparent 70%
+    );
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    filter:blur(90px);
+    z-index:-1;
 }
 
-.about-nova{
-    padding:120px 80px;
+.contact-container{
+    max-width:1200px;
+    margin:auto;
 }
 
-.about-container{
-    display:flex;
-    align-items:center;
-    gap:60px;
+/* HEADER */
+
+.contact-header{
+    text-align:center;
+    margin-bottom:70px;
 }
 
-.about-image{
-    flex:1;
-}
-
-.about-image img{
-    width:100%;
-    border-radius:20px;
-    border:1px solid var(--dark-color);
-}
-
-.about-content{
-    flex:1;
-}
-
-.section-tag{
-    margin-top: 10px;
-    color:var(--primary-color);
-    font-family:var(--main-font);
+.contact-subtitle{
+    font-family:var(--secondary-font);
+    color:var(--secondary-color);
     letter-spacing:2px;
-    font-size: 18px;
+    font-size:14px;
+    text-transform:uppercase;
 }
 
-.about-content h2{
+.contact-header h1{
     font-family:var(--main-font);
-    font-size:42px;
+    font-size:var(--hero-size);
     margin:15px 0;
 }
 
-.about-content h2 span{
-    color:var(--primary-color);
-}
-
-.about-content p{
+.contact-header p{
     font-family:var(--secondary-font);
-    line-height:1.8;
-    color:#d0d0d0;
+    max-width:650px;
+    margin:auto;
+    color:rgba(255,255,255,.75);
 }
 
-.info-cards{
-    display:flex;
-    gap:20px;
-    margin-top:40px;
-}
+/* GRID */
 
-.info-card{
-    flex:1;
-    text-align:center;
-    padding:20px;
-    border-left:1px solid var(--dark-color);
-}
-
-.info-card i{
-    font-size:30px;
-    color:var(--primary-color);
-    margin-bottom:15px;
-}
-
-.info-card h3{
-    font-family:var(--secondary-font);
-    margin-bottom:10px;
-}
-
-.info-card p{
-    font-size:14px;
-}
-
-.core-values{
-    padding:0 80px 120px;
-    text-align:center;
-}
-
-.core-values h2{
-    font-family:var(--main-font);
-    font-size:42px;
+.contact-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
     margin-bottom:50px;
 }
 
-.value-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:30px;
-}
+/* FORM */
 
-.value-card{
-    background:#070707;
-    border:1px solid var(--dark-color);
+.contact-form-card{
+    background:rgba(45,24,105,.25);
+    border:1px solid rgba(136,92,245,.2);
+    backdrop-filter:blur(20px);
     border-radius:20px;
-    padding:40px 25px;
-    transition:.3s;
+    padding:35px;
 }
 
-.value-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px rgba(136,92,245,.3);
-}
-
-.value-card i{
-    font-size:40px;
-    color:var(--primary-color);
+.input-group{
+    display:flex;
+    flex-direction:column;
     margin-bottom:20px;
 }
 
-.value-card h3{
+.input-group label{
     font-family:var(--secondary-font);
-    margin-bottom:15px;
+    margin-bottom:8px;
 }
 
-.value-card p{
+.input-group input,
+.input-group textarea{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(136,92,245,.2);
+    outline:none;
+    color:var(--white);
     font-family:var(--secondary-font);
-    color:#cfcfcf;
-    line-height:1.6;
+    transition:.3s;
+}
+
+.input-group textarea{
+    min-height:150px;
+    resize:none;
+}
+
+.input-group input:focus,
+.input-group textarea:focus{
+    border-color:var(--primary-color);
+    box-shadow:0 0 15px rgba(136,92,245,.4);
+}
+
+.contact-btn{
+    width:100%;
+    border:none;
+    padding:16px;
+    border-radius:12px;
+    cursor:pointer;
+    font-family:var(--secondary-font);
+    font-weight:600;
+    color:var(--white);
+    background:linear-gradient(
+        90deg,
+        var(--primary-color),
+        var(--secondary-color)
+    );
+    transition:.3s;
+}
+
+.contact-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 20px rgba(136,92,245,.5);
+}
+
+/* INFO CARDS */
+
+.contact-info{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.info-card{
+    text-decoration:none;
+    color:var(--white);
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    background:rgba(45,24,105,.25);
+    border:1px solid rgba(136,92,245,.2);
+    backdrop-filter:blur(20px);
+
+    padding:24px;
+    border-radius:18px;
+    transition:.3s;
+}
+
+.info-card i{
+    font-size:28px;
+    color:var(--secondary-color);
+}
+
+.info-card h3{
+    font-family:var(--main-font);
+    font-size:18px;
+    margin-bottom:4px;
+}
+
+.info-card p{
+    font-family:var(--secondary-font);
+    color:rgba(255,255,255,.7);
+    font-size:14px;
+}
+
+.info-card:hover{
+    transform:translateY(-5px);
+    border-color:var(--primary-color);
+    box-shadow:
+        0 0 20px rgba(136,92,245,.3);
+}
+
+/* SOCIAL SECTION */
+
+.social-section{
+    text-align:center;
+    background:rgba(45,24,105,.15);
+    border:1px solid rgba(136,92,245,.2);
+    border-radius:20px;
+    padding:40px;
+}
+
+.social-section h2{
+    font-family:var(--main-font);
+    margin-bottom:25px;
+}
+
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+
+.icons2{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(136,92,245,.08);
+    border:1px solid rgba(136,92,245,.2);
+
+    color:var(--white);
+    font-size:24px;
+
+    transition:.3s;
+}
+
+.icons2:hover{
+    color:var(--secondary-color);
+    border-color:var(--primary-color);
+    transform:translateY(-5px);
+    box-shadow:
+        0 0 20px rgba(136,92,245,.4);
 }
 
 
@@ -390,68 +462,30 @@ body::before{
 }
 
 
-/* Responsive layout */
-/* Responsive layout + hamburger-like mobile nav */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-    .navbar {
-        padding: 0 30px;
-    }
-
-    .hero-content {
-        padding: 120px 20px 0 20px;
-    }
-
-    .about-nova {
-        padding: 120px 30px;
-    }
-
-    .about-container {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .about-image,
-    .about-content {
-        width: 100%;
-    }
-
-    .about-image img {
-        max-width: 100%;
-    }
-
-    .info-cards {
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .value-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
     .navbar {
         padding: 20px 24px;
         justify-content: space-between;
-        gap: 12px;
+        align-items: center;
         position: relative;
+        flex-wrap: wrap;
         height: auto;
     }
 
     .navbar::before {
         content: "";
-        display: block;
-        width: 28px;
-        height: 18px;
         position: absolute;
         right: 24px;
         top: 50%;
         transform: translateY(-50%);
+        width: 24px;
+        height: 18px;
         background-image:
             linear-gradient(var(--white) 0 0),
             linear-gradient(var(--white) 0 0),
             linear-gradient(var(--white) 0 0);
-        background-size: 28px 2px;
+        background-size: 24px 2px;
         background-repeat: no-repeat;
         background-position: left top, left center, left bottom;
         cursor: pointer;
@@ -460,26 +494,31 @@ body::before{
 
     .nav-content {
         display: flex;
-        width: 100%;
         flex-direction: column;
         align-items: center;
         gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease;
-        background: rgba(0, 0, 0, 0.96);
-        border-top: 1px solid rgba(136, 92, 245, 0.25);
+        width: 100%;
         position: absolute;
         left: 0;
         right: 0;
         top: 90px;
         padding: 0;
+        background: rgba(0, 0, 0, 0.96);
+        border-top: 1px solid rgba(136, 92, 245, 0.25);
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transition: max-height 0.35s ease, opacity 0.35s ease;
+        z-index: 900;
     }
 
     .navbar:hover .nav-content,
     .navbar:focus-within .nav-content,
     .navbar:active .nav-content {
         max-height: 420px;
+        opacity: 1;
+        pointer-events: auto;
     }
 
     .nav-content a {
@@ -490,25 +529,47 @@ body::before{
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .hero-content {
-        flex-direction: column;
-        align-items: flex-start;
+    .contact {
+        padding: 120px 5%;
     }
 
-    .about-nova {
-        padding: 100px 20px 40px;
-    }
-
-    .about-container {
-        padding: 0 0 30px;
-    }
-
-    .info-cards {
-        flex-direction: column;
-    }
-
-    .value-grid {
+    .contact-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 18px 20px;
+    }
+
+    .navbar::before {
+        right: 20px;
+    }
+
+    .nav-content {
+        top: 84px;
+    }
+
+    .contact {
+        padding: 120px 20px;
+    }
+
+    .contact-header h1 {
+        font-size: 42px;
+    }
+
+    .contact-form-card {
+        padding: 28px;
+    }
+
+    .contact-grid {
+        gap: 24px;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        gap: 16px;
     }
 
     .NovaCoin-footer {
@@ -519,11 +580,35 @@ body::before{
     }
 
     .second-footer-content {
+        width: 100%;
         flex-direction: column;
         gap: 24px;
     }
 
     .footer-column {
         min-width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .navbar::before {
+        right: 16px;
+    }
+
+    .contact {
+        padding: 100px 16px;
+    }
+
+    .contact-header h1 {
+        font-size: 36px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding: 14px;
+    }
+
+    .contact-btn {
+        padding: 14px;
     }
 }
